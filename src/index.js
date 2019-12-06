@@ -58,9 +58,8 @@ function App() {
 
 
             <div className="pokedex">
-                <h2>Your collection so far:</h2>
+                <h2 className="secondHeader">Your collection so far:</h2>
                 <br/>
-                <div className="scroll-menu">
                     <div className="pokedex-list">
                         {pokedex.map(pokemon => (
                             <div className="pokemon" key={pokemon.id}>
@@ -117,12 +116,14 @@ function App() {
                                 <button className="remove" onClick={() => releasePokemon(pokemon.id)}>&times;</button>
                             </div>
                         ))
-                        }
-                    </div>
+                    }
                 </div>
-            </div>
-            <br />
+
         </div>
+        <div className="secondHeader">
+            what it do
+        </div>
+    </div>
     )
 }
 

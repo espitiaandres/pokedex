@@ -8,7 +8,6 @@
 
 body {
   margin: 0;
-  /*font-family: "Segoe UI", sans-serif;*/
   font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,7 +100,7 @@ header {
   color: #171717;
   font-weight: 700;
   cursor: pointer;
-  font-size: calc(3px + 2vmin);
+  font-size: calc(6px + 2vmin);
   font-family: 'Segoe UI';
 }
 
@@ -116,7 +115,9 @@ header {
   flex-flow: column;
   overflow: hidden;
   font-size: calc(1px + 2vmin);
-  background: linear-gradient(rgb(19, 76, 201), white);
+  background-color: #171717;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pokedex h2 {
@@ -126,7 +127,9 @@ header {
 .pokedex-list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   grid-gap: 2%;
 }
 
@@ -135,10 +138,12 @@ header {
   display: flex;
   flex-flow: column;
   min-height: 150px;
+  max-height: 500px;
+  overflow: scroll;
   padding: 12px;
   background: #f3f3f3;
   font-size: 14px; 
-  font-family: 'SEGOE UI';
+  font-family: 'Segoe UI';
 }
 
 .pokedex-list .pokemon .pokemon-name{
@@ -178,4 +183,33 @@ header {
   width: 50%;
   height: 50%;
   margin: -5%;
+}
+
+.youUnderline {
+  text-decoration: underline;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.secondHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

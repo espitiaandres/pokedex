@@ -4,6 +4,7 @@ import axios from 'axios';
 import './index.css';
 import Header from './Components/Header';
 import WildPokemon from './Components/WildPokemon';
+import pokeball from './Images/pokeball.png';
 
 function App() {
     const [pokedex, setPokedex] = useState([])
@@ -118,11 +119,23 @@ function App() {
                         ))
                     }
                 </div>
+                <br />
+                <br />
+                <br />
+                <br />
 
         </div>
-        <div className="secondHeader">
-            what it do
+        <div className="pokeballSection">
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>
+            <img src={pokeball} className="pokeball"/>            
         </div>
+
     </div>
     )
 }

@@ -124,6 +124,17 @@ header {
   color: white;
 }
 
+.pokeballSection {
+  padding: 15px;
+  font-size: calc(1px + 2vmin);
+  background-color: #171717;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .pokedex-list {
   width: 100%;
   display: grid;
@@ -183,6 +194,20 @@ header {
   width: 50%;
   height: 50%;
   margin: -5%;
+}
+
+.pokeball {
+  width: 12.5%;
+  height: 2%;
+  padding: 10px;
+  background-color: #171717;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .youUnderline {

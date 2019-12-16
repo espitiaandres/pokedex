@@ -11,7 +11,7 @@ export class Header extends Component {
                 </div>
                 <br />
                 <div>
-                    <h3 className="subtitle">Are <span className="youUnderline">YOU</span> ready to catch them all?</h3>
+                    <h3 className="subtitle">Are <span className="underline">YOU</span> ready to catch them all?</h3>
                 </div>
                 <img src={mainLogo} className="pokemonLogo"/>
                 <br />

@@ -122,12 +122,21 @@ header {
   color: #171717;
   font-weight: 700;
   cursor: pointer;
-  font-size: calc(6px + 2vmin);
+  font-size: calc(4px + 2vmin);
   font-family: 'Segoe UI';
 }
 
 .wild-pokemon .catch-btn:active {
   background: #F7A800;
+}
+
+.inlineButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pokedex {
@@ -161,7 +170,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 2%;
+  grid-gap: 0.5%;
 }
 
 .pokedex-list .pokemon {
@@ -169,12 +178,17 @@ header {
   display: flex;
   flex-flow: column;
   min-height: 150px;
-  max-height: 500px;
+  max-height: 700px;
   overflow: scroll;
   padding: 12px;
   background: #f3f3f3;
   font-size: 14px; 
   font-family: 'Segoe UI';
+}
+
+.pokedex-list .pokemon .sprite:hover{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 .pokedex-list .pokemon .pokemon-name{
@@ -211,7 +225,7 @@ header {
 }
 
 .pokemonLogo {
-  width: 50%;
+  width: 550px;
   height: 50%;
   margin: -5%;
 }
@@ -232,11 +246,16 @@ header {
 
 .underline {
   text-decoration: underline;
+  color: #f3f3f3;
+}
+
+.underline .pokemonApiLink {
+  color: #f3f3f3;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 12px;
 }
 
 /* Track */

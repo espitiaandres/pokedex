@@ -5,7 +5,7 @@ export class WildPokemon extends Component {
         return (
             <div wildPokemonSection>
                 <h2>
-                    A wild <span className="underline">{this.props.wildPokename}</span> has appeared!
+                    A wild <span className="underline"><a className="pokemonApiLink" href={"https://www.pokeapi.co/api/v2/pokemon/" + this.props.wildPokeid}>{this.props.wildPokename}</a></span> has appeared!
                 </h2>
                 <br/>
                 <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + 

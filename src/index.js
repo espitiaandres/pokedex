@@ -52,7 +52,10 @@ function App() {
             </header>            
             <div className="wild-pokemon">
                 <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id}/>
-                <button className="catch-btn" onClick={() => catchPokemon(wildPokemon)}>Catch!</button>
+                <span className="inlineButtons">
+                    <button className="catch-btn" onClick={() => catchPokemon(wildPokemon)}>Catch!</button>
+                    <button className="catch-btn" onClick={() => encounterWildPokemon()}>Pass...</button>
+                </span>
             </div>
             <div className="pokedex">
                 <h2 className="secondHeader">Your collection so far:</h2>

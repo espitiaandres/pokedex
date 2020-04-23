@@ -41,7 +41,7 @@ header {
 .title {
   color: #FFF;
   padding: 0% 5%;
-  font-size: 32px;
+  font-size: 36px;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1;
@@ -50,9 +50,14 @@ header {
 
 .subtitle {
   color: #FFF;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 1;
+}
+
+.introStatement {
+  font-size: 14px;
+  color: #FFF;
 }
 
 .wild-pokemon {
@@ -127,7 +132,7 @@ header {
 }
 
 .wild-pokemon .catch-btn:active {
-  background: #F7A800;
+  background: gold;
 }
 
 .inlineButtons {
@@ -145,7 +150,7 @@ header {
   display: flex;
   flex-flow: column;
   overflow: hidden;
-  font-size: calc(1px + 2vmin);
+  font-size: 18px;
   background-color: #171717;
   margin-left: auto;
   margin-right: auto;
@@ -170,7 +175,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 0.5%;
+  grid-gap: 0.7%;
 }
 
 .pokedex-list .pokemon {
@@ -189,6 +194,28 @@ header {
 .pokedex-list .pokemon .sprite:hover{
   animation: shake 0.5s;
   animation-iteration-count: infinite;
+}
+
+.pokemonCard {
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokemonImage {
+  position: absolute;
+  padding-bottom: 60px;
+  z-index: 3;
+}
+
+.pokemonCardImage {
+  position: absolute;
+  z-index: 1;
 }
 
 .pokedex-list .pokemon .pokemon-name{

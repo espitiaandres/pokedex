@@ -4,7 +4,7 @@ import axios from 'axios';
 import './index.css';
 import Header from './Components/Header';
 import WildPokemon from './Components/WildPokemon';
-import pokeball from './Images/pokeball.png';
+import Pokeballs from './Components/Pokeballs';
 
 function App() {
     const [pokedex, setPokedex] = useState([])
@@ -46,10 +46,10 @@ function App() {
     }
 
     return(
-        <div>
+        <div>      
             <header className="header">
                 <Header />
-            </header>            
+            </header>
             <div className="wild-pokemon">
                 <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id}/>
                 <span className="inlineButtons">
@@ -57,6 +57,7 @@ function App() {
                     <button className="catch-btn" onClick={() => encounterWildPokemon()}>Pass...</button>
                 </span>
             </div>
+
             <div className="pokedex">
                 <h2 className="secondHeader">Your collection so far:</h2>
                 <br/>
@@ -113,20 +114,10 @@ function App() {
                             <hr/>
                             <button className="remove" onClick={() => releasePokemon(pokemon.id)}>&times;</button>
                         </div>
-                    ))
-                }
+                    ))}
                 </div>
             </div>
-        <div className="pokeballSection">
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>
-            <img src={pokeball} className="pokeball"/>            
-        </div>
+        <Pokeballs />
     </div>
     )
 }

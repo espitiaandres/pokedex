@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import pokemonCardLayout from '../Images/pokemonCardLayout.png';
 
 export class WildPokemon extends Component {
     render() {
@@ -7,10 +8,14 @@ export class WildPokemon extends Component {
                 <h2>
                     A wild <span className="underline"><a className="pokemonApiLink" href={"https://www.pokeapi.co/api/v2/pokemon/" + this.props.wildPokeid}>{this.props.wildPokename}</a></span> has appeared!
                 </h2>
-                <br/>
-                <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + 
-                            this.props.wildPokeid + ".png"} className="sprite wildPokemonHover" />
-                <br/>
+                <br />
+                <div className="pokemonCard">
+                    <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + 
+                            this.props.wildPokeid + ".png"} className="sprite wildPokemonHover pokemonImage" />
+                    <img src={pokemonCardLayout} className="sprite wildPokemonHover pokemonCardImage" />
+                </div>
+
+                <br />
                 <h3>{this.props.wildPokename}</h3>
             </div>
         )

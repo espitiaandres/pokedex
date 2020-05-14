@@ -5,6 +5,7 @@ import './index.css';
 import Header from './Components/Header';
 import WildPokemon from './Components/WildPokemon';
 import Pokeballs from './Components/Pokeballs';
+import footerImage from './Images/footerImage.jpg';
 
 function App() {
     const [pokedex, setPokedex] = useState([])
@@ -59,7 +60,7 @@ function App() {
             </div>
 
             <div className="pokedex">
-                <h2 className="secondHeader">Your collection so far:</h2>
+                <h2 className="collectionHeader">Your collection so far:</h2>
                 <br/>
                 <div className="pokedex-list">
                     {pokedex.map(pokemon => (

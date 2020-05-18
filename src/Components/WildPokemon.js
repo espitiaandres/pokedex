@@ -1,3 +1,11 @@
+//
+//  WildPokemon.js
+//  pokedex
+//
+//  Created by Andres Espitia.
+//  Copyright © 2020 Andres Espitia. All rights reserved.
+//
+
 import React, { Component } from 'react'
 import pokemonCardLayout from '../Images/pokemonCardLayout.png';
 

@@ -1,11 +1,23 @@
+//
+//  index.js
+//  pokedex
+//
+//  Created by Andres Espitia.
+//  Copyright © 2020 Andres Espitia. All rights reserved.
+//
+
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import { Link, animateScroll } from 'react-scroll';
 import './index.css';
 import Header from './Components/Header';
 import WildPokemon from './Components/WildPokemon';
 import Pokeballs from './Components/Pokeballs';
-import footerImage from './Images/footerImage.jpg';
+
+
+//TODO: add a loading screen for when the wildPokemon image loads into the card
+
 
 function App() {
     const [pokedex, setPokedex] = useState([])
@@ -14,12 +26,14 @@ function App() {
         encounterWildPokemon()
     }, [])
 
+    // Obtains a random pokemon id from the Kanto region (pokemon #1-151)
     const pokeId = () => {
         const min = Math.ceil(1)
         const max = Math.floor(151)
         return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
+    // Fetches a wild pokemon for the user to catch
     const encounterWildPokemon = () => {
         axios
         .get('https://pokeapi.co/api/v2/pokemon/' + pokeId())
@@ -28,6 +42,7 @@ function App() {
         })
     }
 
+    // Allows user to catch pokemon and store in their pokedex below
     const catchPokemon = (pokemon) => {
         setPokedex(state => {
             const monExists = (state.filter(p => pokemon.id === p.id).length > 0);
@@ -42,6 +57,7 @@ function App() {
         encounterWildPokemon()
     }
 
+    //Allows user to delete a caught pokemon from their pokedex
     const releasePokemon = id => {
         setPokedex(state => state.filter(p => p.id !== id))
     }
@@ -51,15 +67,28 @@ function App() {
             <header className="header">
                 <Header />
             </header>
-            <div className="wild-pokemon">
+            <div className="wild-pokemon" id="wild-pokemon">
                 <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id}/>
                 <span className="inlineButtons">
-                    <button className="catch-btn" onClick={() => catchPokemon(wildPokemon)}>Catch!</button>
-                    <button className="catch-btn" onClick={() => encounterWildPokemon()}>Pass...</button>
+                    <button className="catch-btn" onClick={() => {catchPokemon(wildPokemon)}}>
+                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>
+                            Catch!
+                        </Link>
+                    </button>
+                    <button className="catch-btn" onClick={() => encounterWildPokemon()}>
+                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => encounterWildPokemon()}>
+                            Pass...
+                        </Link>
+                    </button>
+                    <button className="catch-btn" >
+                    <Link to="pokedex" spy={true} smooth={true} duration={400}>
+                        See my collection
+                    </Link>
+                    </button>
                 </span>
             </div>
 
-            <div className="pokedex">
+            <div className="pokedex" id="pokedex">
                 <h2 className="collectionHeader">Your collection so far:</h2>
                 <br/>
                 <div className="pokedex-list">
@@ -117,6 +146,15 @@ function App() {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div className="footerButtons">
+                <span className="inlineButtons">
+                    <button className="catch-btn" >
+                    <Link to="wild-pokemon" spy={true} smooth={true} duration={400}>
+                        More pokemon!
+                    </Link>
+                    </button>
+                </span>   
             </div>
         <Pokeballs />
     </div>

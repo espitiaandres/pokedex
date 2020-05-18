@@ -1,3 +1,11 @@
+/* 
+  index.css
+  pokedex
+
+  Created by Andres Espitia.
+  Copyright © 2020 Andres Espitia. All rights reserved.
+ */
+
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
 * {
@@ -53,7 +61,6 @@ header {
   color: #FFF;
   padding: 0% 5%;
   font-size: 36px;
-  text-transform: uppercase;
   font-weight: 700;
   line-height: 1;
   text-shadow: 23px 23px 28px rgba(0, 0, 0, 0.4);
@@ -72,9 +79,8 @@ header {
 }
 
 .wild-pokemon {
-  min-height: 300px;
-  /*background: firebrick;*/
-  background-image: url(./Images/footerImage.jpg);
+  min-height: 560px;
+  background-image: url(./Images/pokemonCardBackground.jpg);
   padding: 15px;
   
 }
@@ -128,8 +134,8 @@ header {
   text-align: center;
 }
 
-.wild-pokemon .catch-btn {
-  width: 200px;
+.catch-btn {
+  width: 172px;
   height: 35px;
   display: block;
   margin: 25px auto;
@@ -139,11 +145,11 @@ header {
   color: #171717;
   font-weight: 700;
   cursor: pointer;
-  font-size: calc(4px + 2vmin);
+  font-size: 20px;
   font-family: 'Segoe UI';
 }
 
-.wild-pokemon .catch-btn:active {
+.catch-btn:active {
   background: gold;
 }
 
@@ -151,9 +157,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 420px;
+  width: 690px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .pokedex {
@@ -270,6 +277,10 @@ header {
   margin: -5%;
 }
 
+.footerButtons {
+  background-color: #171717;
+}
+
 .pokeball {
   width: 12.5%;
   height: 2%;
@@ -282,6 +293,12 @@ header {
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+.pokeballFooter {
+  background: #171717;
+  color: #f3f3f3;
+  padding: 15px;
 }
 
 .underline {

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pokedex/static/css/main.bbdfacf5.chunk.css",
-    "main.js": "/pokedex/static/js/main.1506afcd.chunk.js",
-    "main.js.map": "/pokedex/static/js/main.1506afcd.chunk.js.map",
+    "main.css": "/pokedex/static/css/main.165306eb.chunk.css",
+    "main.js": "/pokedex/static/js/main.5e671a48.chunk.js",
+    "main.js.map": "/pokedex/static/js/main.5e671a48.chunk.js.map",
     "runtime-main.js": "/pokedex/static/js/runtime-main.dc93633d.js",
     "runtime-main.js.map": "/pokedex/static/js/runtime-main.dc93633d.js.map",
-    "static/js/2.52699881.chunk.js": "/pokedex/static/js/2.52699881.chunk.js",
-    "static/js/2.52699881.chunk.js.map": "/pokedex/static/js/2.52699881.chunk.js.map",
+    "static/js/2.522de2f7.chunk.js": "/pokedex/static/js/2.522de2f7.chunk.js",
+    "static/js/2.522de2f7.chunk.js.map": "/pokedex/static/js/2.522de2f7.chunk.js.map",
     "index.html": "/pokedex/index.html",
-    "precache-manifest.b726db0021ce15adfc5407c2f28b4253.js": "/pokedex/precache-manifest.b726db0021ce15adfc5407c2f28b4253.js",
+    "precache-manifest.129317e6599bff7c2baed560708f6531.js": "/pokedex/precache-manifest.129317e6599bff7c2baed560708f6531.js",
     "service-worker.js": "/pokedex/service-worker.js",
-    "static/css/main.bbdfacf5.chunk.css.map": "/pokedex/static/css/main.bbdfacf5.chunk.css.map",
+    "static/css/main.165306eb.chunk.css.map": "/pokedex/static/css/main.165306eb.chunk.css.map",
     "static/media/pokeball.png": "/pokedex/static/media/pokeball.9aaacdb8.png",
     "static/media/pokemon-logo-png.png": "/pokedex/static/media/pokemon-logo-png.570fcab8.png",
     "static/media/index.css": "/pokedex/static/media/pokemonCardBackground.62f6310a.jpg",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dc93633d.js",
-    "static/js/2.52699881.chunk.js",
-    "static/css/main.bbdfacf5.chunk.css",
-    "static/js/main.1506afcd.chunk.js"
+    "static/js/2.522de2f7.chunk.js",
+    "static/css/main.165306eb.chunk.css",
+    "static/js/main.5e671a48.chunk.js"
   ]
 }

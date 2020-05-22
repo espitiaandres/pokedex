@@ -25,7 +25,9 @@ export class WildPokemon extends Component {
                             this.props.wildPokeid + ".png"} className="sprite wildPokemonHover pokemonImage" />
                     <img src={pokemonCardLayout} className="sprite wildPokemonHover pokemonCardImage" />
                 </div>
-                <h3>{this.props.wildPokename}</h3>
+                <h3>
+                    {this.props.wildPokename}
+                </h3>
             </div>
         )
     }

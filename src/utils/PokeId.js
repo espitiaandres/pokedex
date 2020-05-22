@@ -7,6 +7,7 @@
 //
 
 // Obtains a random pokemon id from the region specified
+
 const PokeId = (firstPokemon, lastPokemon) => {
     const min = Math.ceil(firstPokemon)
     const max = Math.floor(lastPokemon)

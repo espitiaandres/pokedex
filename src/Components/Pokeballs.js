@@ -1,13 +1,13 @@
 //
 // Pokeballs.js
-//  pokedex
+// pokedex
 //
 //  Created by Andres Espitia.
 //  Copyright © 2020 Andres Espitia. All rights reserved.
 //
 
 import React, { Component } from 'react'
-import pokeball from '../Images/pokeball.png';
+import pokeball from '../images/pokeball.png';
 
 export class Pokeballs extends Component {
     render() {
@@ -17,13 +17,12 @@ export class Pokeballs extends Component {
             {function () {
                 let rows = [];
                 for (let i=0; i < 8; i++) {
-                    rows.push(<img src={pokeball} className="pokeball"/>);
+                    rows.push(<img src={pokeball} key={i} className="pokeball"/>);
                 }
                 return rows;
             }() }
             </span>
         </div>
-
     }
 }
 

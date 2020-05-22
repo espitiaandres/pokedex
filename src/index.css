@@ -80,7 +80,7 @@ header {
 
 .wild-pokemon {
   min-height: 560px;
-  background-image: url(./Images/pokemonCardBackground.jpg);
+  background-image: url(./images/pokemonCardBackground.jpg);
   padding: 15px;
   
 }
@@ -108,23 +108,8 @@ header {
   display: block;
   width: 200px;
   margin: 0px auto;
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
 }
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
 
 .wild-pokemon h3 {
   color: #f3f3f3;
@@ -151,6 +136,14 @@ header {
 
 .catch-btn:active {
   background: gold;
+}
+
+.catch-btn:focus {
+  background: #FFC300;
+}
+
+.catch-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,1);
 }
 
 .inlineButtons {
@@ -210,11 +203,6 @@ header {
   font-family: 'Segoe UI';
 }
 
-.pokedex-list .pokemon .sprite:hover{
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
-
 .pokemonCard {
   position: relative;
   margin-top: 150px;
@@ -224,6 +212,8 @@ header {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .pokemonImage {
@@ -237,9 +227,13 @@ header {
   z-index: 1;
 }
 
-.pokedex-list .pokemon .pokemon-name{
+.pokedex-list .pokemon .pokemon-name {
   padding-bottom: 10%;
-  color: firebrick;
+  color: black;
+}
+
+.pokedex-list .pokemon .pokemon-name .pokemon-number{
+  color:firebrick;
 }
 
 .pokedox-list ,.pokemon .remove {
@@ -264,7 +258,6 @@ header {
 
 .pokedex-list .pokemon .pokemon-category{
   color: black;
-  padding: 0% 0%;
 }
 
 .remove:hover {
@@ -328,4 +321,52 @@ header {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+
+.dd-header {
+  cursor: pointer;
+  width: 172px;
+  background-color: #FFC300;
+  font-family: 'Segoe UI';
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dd-list {
+  padding: 0;
+  margin: 0;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dd-list li {
+  list-style-type: none;
+}
+
+.dd-list span {
+  list-style-type: none;
+  text-transform: none;
+}
+
+.dd-list button {
+  font-family: 'Segoe UI';
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  border: 0;
+  border-bottom: 0.5px solid #171717;
+  width: 100%;
+  text-align: left;
+  background-color: #FFC300;
+}
+      
+.dd-list button:hover, :focus {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: gold;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,1);
 }

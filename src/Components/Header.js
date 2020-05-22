@@ -7,7 +7,7 @@
 //
 
 import React, { Component } from 'react';
-import mainLogo from '../Images/pokemon-logo-png.png';
+import mainLogo from '../images/pokemon-logo-png.png';
 
 export class Header extends Component {
     render() {

@@ -6,41 +6,35 @@
 //  Copyright © 2020 Andres Espitia. All rights reserved.
 //
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { Link, animateScroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import './index.css';
-import Header from './Components/Header';
-import WildPokemon from './Components/WildPokemon';
-import Pokeballs from './Components/Pokeballs';
+import Header from './components/Header';
+import WildPokemon from './components/WildPokemon';
+import Pokeballs from './components/Pokeballs';
+import { RegionDropdown, regionNumberParams } from './components/RegionDropdown';
+import regions from './assets/Regions';
+import PokeId from './utils/PokeId';
 
 
-
-// TODO: allow user to choose what region of pokemon they want to select (Kanto, Johto, all regions..)
-// TODO: make pokemon cards moveable/draggable in the pokedex
-// TODO: make HP, attack, defense, speed, sp atk, sp def values into a bar graph
-// TODO: get strengths and weaknesses for each pokemon:
+// TODO: make HP, attack, defense, speed, sp atk, sp def values into a bar graph -> use canvasJS for this -> https://canvasjs.com/react-charts/bar-chart/
+// TODO: get strengths and weaknesses for each pokemon
 
 
 function App() {
     const [pokedex, setPokedex] = useState([])
-    const [wildPokemon, setWildPokemon] = useState({});
+    const [wildPokemon, setWildPokemon] = useState({})
+      
     useEffect(() => {
         encounterWildPokemon()
     }, [])
 
-    // Obtains a random pokemon id from the Kanto region (pokemon #1-151)
-    const pokeId = () => {
-        const min = Math.ceil(1)
-        const max = Math.floor(151)
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    }
-
     // Fetches a wild pokemon for the user to catch
     const encounterWildPokemon = () => {
         axios
-        .get('https://pokeapi.co/api/v2/pokemon/' + pokeId())
+        .get('https://pokeapi.co/api/v2/pokemon/' + PokeId(regionNumberParams.firstPokemon, regionNumberParams.lastPokemon))
         .then(response => {
             setWildPokemon(response.data)
         }).catch((e) => {
@@ -75,7 +69,7 @@ function App() {
             </header>
             <div className="wild-pokemon" id="wild-pokemon">
                 <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id}/>
-                <span className="inlineButtons">
+                <span className="inlineButtons" id="inlineButtons">
                     <button className="catch-btn" onClick={() => {catchPokemon(wildPokemon)}}>
                         <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>
                             Catch!
@@ -92,6 +86,9 @@ function App() {
                     </Link>
                     </button>
                 </span>
+                <Link to="inlineButtons" spy={true} smooth={true} duration={400}>
+                    <RegionDropdown title="Select Region" regions={regions} />
+                </Link>
             </div>
 
             <div className="pokedex" id="pokedex">
@@ -104,7 +101,7 @@ function App() {
                             pokemon.id + ".png"} className="sprite" />
                             <div className="pokemon-name">
                                 <h3>{pokemon.name}</h3>
-                                <h5>pokemon #{pokemon.id}</h5>
+                                <h5 className="pokemon-number">pokemon #{pokemon.id}</h5>
                             </div>
                             <hr/>
                             <div>
@@ -156,9 +153,7 @@ function App() {
             <div className="footerButtons">
                 <span className="inlineButtons">
                     <button className="catch-btn" >
-                    <Link to="wild-pokemon" spy={true} smooth={true} duration={400}>
-                        More pokemon!
-                    </Link>
+                    <Link to="wild-pokemon" spy={true} smooth={true} duration={400}> More pokemon! </Link>
                     </button>
                 </span>   
             </div>

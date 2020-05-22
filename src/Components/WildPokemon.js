@@ -12,7 +12,7 @@ import pokemonCardLayout from '../images/pokemonCardLayout.png';
 export class WildPokemon extends Component {
     render() {
         return (
-            <div wildPokemonSection>
+            <div>
                 <h2>
                     A wild <span className="underline">
                         <a className="pokemonApiLink" href={"https://www.pokeapi.co/api/v2/pokemon/" + this.props.wildPokeid}>

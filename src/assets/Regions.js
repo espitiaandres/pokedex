@@ -41,12 +41,14 @@ const regions = [
         id: 7,
         generationNumber: 'VII',
         name: 'Alola'
-    },
-    {
-        id: 8,
-        generationNumber: 'VIII',
-        name: 'Galar'
     }
+    // TODO: add generation 8 when it comes out to the API
+    // ,
+    // {
+    //     id: 8,
+    //     generationNumber: 'VIII',
+    //     name: 'Galar'
+    // }
 ]
 
 export default regions

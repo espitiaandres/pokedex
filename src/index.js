@@ -16,7 +16,11 @@ import WildPokemon from './Components/WildPokemon';
 import Pokeballs from './Components/Pokeballs';
 
 
-//TODO: add a loading screen for when the wildPokemon image loads into the card
+
+// TODO: allow user to choose what region of pokemon they want to select (Kanto, Johto, all regions..)
+// TODO: make pokemon cards moveable/draggable in the pokedex
+// TODO: make HP, attack, defense, speed, sp atk, sp def values into a bar graph
+// TODO: get strengths and weaknesses for each pokemon:
 
 
 function App() {
@@ -38,7 +42,10 @@ function App() {
         axios
         .get('https://pokeapi.co/api/v2/pokemon/' + pokeId())
         .then(response => {
-            setWildPokemon(response.data);
+            setWildPokemon(response.data)
+            console.log('Success')
+        }).catch((e) => {
+            console.log('Please try later, something went wrong...', e)
         })
     }
 

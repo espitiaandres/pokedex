@@ -43,7 +43,6 @@ function App() {
         .get('https://pokeapi.co/api/v2/pokemon/' + pokeId())
         .then(response => {
             setWildPokemon(response.data)
-            console.log('Success')
         }).catch((e) => {
             console.log('Please try later, something went wrong...', e)
         })

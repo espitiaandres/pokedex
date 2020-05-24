@@ -68,7 +68,7 @@ function App() {
                 <Header />
             </header>
             <div className="wild-pokemon" id="wild-pokemon">
-                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id === undefined ? wildPokemon.id = 1 : wildPokemon.id = wildPokemon.id}/>
+                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id === undefined ? wildPokemon.id = 1 : wildPokemon.id}/>
                 <span className="inlineButtons" id="inlineButtons">
                     <button className="catch-btn" onClick={() => {catchPokemon(wildPokemon)}}>
                         <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>

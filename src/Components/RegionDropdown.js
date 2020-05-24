@@ -7,10 +7,10 @@
 //
 
 import React, { useState } from 'react';
-import RegionNumber from '../utils/RegionNumber';
+import Regions from '../assets/Regions';
 
 // Default values to region 1 (Kanto)
-var regionNumberParams = 
+let regionNumberParams = 
 {
     firstPokemon : 1,
     lastPokemon : 151,
@@ -24,20 +24,20 @@ function RegionDropdown({ title, regions=[] }) {
 
     function handleOnClick(item) {
         if (!selection.some(current => current.id === item.id)) {
-            setSelection([item])
-            regionNumberParams = RegionNumber(item.id)
+            setSelection([item]);
+            regionNumberParams = (Regions.filter((region) => region.id === item.id))[0];
         } else {
             let selectionAfterRemoval = selection;
-            selectionAfterRemoval = selectionAfterRemoval.filter(current => current.id !== item.id)
-            setSelection([...selectionAfterRemoval])
+            selectionAfterRemoval = selectionAfterRemoval.filter(current => current.id !== item.id);
+            setSelection([...selectionAfterRemoval]);
         }
     }
 
     function isItemInSelection(item) {
         if (selection.find(current => current.id === item.id)) {
-            return true
+            return true;
         }
-        return false
+        return false;
     }
 
     return (

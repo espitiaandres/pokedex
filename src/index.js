@@ -19,10 +19,6 @@ import regions from './assets/Regions';
 import PokeId from './utils/PokeId';
 
 
-// TODO: make HP, attack, defense, speed, sp atk, sp def values into a bar graph -> use canvasJS for this -> https://canvasjs.com/react-charts/bar-chart/
-// TODO: get strengths and weaknesses for each pokemon
-
-
 function App() {
     const [pokedex, setPokedex] = useState([])
     const [wildPokemon, setWildPokemon] = useState({})
@@ -58,7 +54,7 @@ function App() {
     }
 
     //Allows user to delete a caught pokemon from their pokedex
-    const releasePokemon = id => {
+    const releasePokemon = (id) => {
         setPokedex(state => state.filter(p => p.id !== id))
     }
 
@@ -108,11 +104,11 @@ function App() {
                                 {
                                     pokemon.types.map(p => p.type.name).length > 1 ? (
                                         <h5 className="pokemon-stat">
-                                            types: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div key={poketype}>&Xi; {poketype}</div>))}</span>
+                                            types: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi; {poketype}</div>))}</span>
                                         </h5>
                                     ) : (
                                         <h5 className="pokemon-stat">
-                                            type: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div key={poketype}>&Xi;  {poketype}</div>))}</span>
+                                            type: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi;  {poketype}</div>))}</span>
                                         </h5>
                                     )
                                 }
@@ -120,29 +116,22 @@ function App() {
                             <hr/>
                             <h5 className="pokemon-stat">
                                 abilities: 
-                                <span className="pokemon-category">
-                                    {pokemon.abilities.map(p => p.ability.name).map(a => (<div key={a}>&Xi; {a}</div>))}
-                                </span>
+                                <span className="pokemon-category">{pokemon.abilities.map(p => p.ability.name).map(a => (<div>&Xi; {a}</div>))}</span>
                             </h5>
                             <hr/>
                             <h5 className="pokemon-stat">
                                 base xp: 
-                                <div className="pokemon-category">
-                                    {pokemon.base_experience}
-                                </div>
+                                <div className="pokemon-category">{pokemon.base_experience}</div>
                             </h5>
                             <hr/>
                             <h5 className="pokemon-stat">
                                 stats:  
-                                <span className="pokemon-category">
-                                    {pokemon.stats.map(s => s).map(stat => (<div key={stat.stat.name}>&Xi; {stat.stat.name}: {stat.base_stat}</div>))}
-                                </span>
+                                <span className="pokemon-category">{pokemon.stats.map(s => (<div>&Xi; {s.stat.name}: {s.base_stat}</div>))}</span>
                             </h5>
+                            <hr/>
                             <h5 className="pokemon-stat">
                                 moves:
-                                <span className="pokemon-category">
-                                    {pokemon.moves.map(s => s).map(move => (<div key={move.move.name}>&Xi; {move.move.name}</div>))}
-                                </span>
+                                <span className="pokemon-category">{pokemon.moves.map(m => (<div>&Xi; {m.move.name}</div>))}</span>
                             </h5> 
                             <hr/>
                             <button className="remove" onClick={() => releasePokemon(pokemon.id)}>&times;</button>
@@ -157,9 +146,13 @@ function App() {
                     </button>
                 </span>   
             </div>
-        <Pokeballs />
+          <Pokeballs />
     </div>
     )
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+
+// TODO: get strengths and weaknesses for each pokemon
+// TODO: make type names with different colors

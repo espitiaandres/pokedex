@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import Regions from '../assets/Regions';
 
-// Default values to region 1 (Kanto)
+// Default values to region 1 (Kanto Region)
 let regionNumberParams = 
 {
     firstPokemon : 1,
@@ -59,7 +59,7 @@ function RegionDropdown({ title, regions=[] }) {
                             <li className="dd-list-item" key={region.generationNumber}>
                                 <button type="button" onClick={() => {handleOnClick(region); toggle(!open)}}>
                                 <span>Generation {region.generationNumber}: {region.name}</span>
-                                <span>{isItemInSelection(region) && 'Selected'}</span>
+                                {isItemInSelection(region) ? <span>&#10003;</span> : ''}
                                 </button>
                             </li>
                         ))}

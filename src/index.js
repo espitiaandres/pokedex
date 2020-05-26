@@ -64,7 +64,7 @@ function App() {
                 <Header />
             </header>
             <div className="wild-pokemon" id="wild-pokemon">
-                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id === undefined ? wildPokemon.id = 1 : wildPokemon.id}/>
+                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={!wildPokemon.id ? wildPokemon.id = 1 : wildPokemon.id}/>
                 <span className="inlineButtons" id="inlineButtons">
                     <button className="catch-btn" onClick={() => {catchPokemon(wildPokemon)}}>
                         <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>
@@ -82,7 +82,7 @@ function App() {
                     </Link>
                     </button>
                 </span>
-                <Link to="inlineButtons" spy={true} smooth={true} duration={400}>
+                <Link to="inlineButtons" spy={true} smooth={true} duration={400} onClick={() => encounterWildPokemon()}>
                     <RegionDropdown title="Select Region" regions={regions} />
                 </Link>
             </div>
@@ -102,15 +102,10 @@ function App() {
                             <hr/>
                             <div>
                                 {
-                                    pokemon.types.map(p => p.type.name).length > 1 ? (
-                                        <h5 className="pokemon-stat">
-                                            types: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi; {poketype}</div>))}</span>
-                                        </h5>
-                                    ) : (
-                                        <h5 className="pokemon-stat">
-                                            type: <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi;  {poketype}</div>))}</span>
-                                        </h5>
-                                    )
+                                    <h5 className="pokemon-stat">
+                                        {pokemon.types.map(p => p.type.name).length > 1 ? 'types:' : 'type:'}
+                                        <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi; {poketype}</div>))}</span>
+                                    </h5>
                                 }
                             </div>
                             <hr/>

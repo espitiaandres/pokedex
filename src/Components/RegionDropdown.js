@@ -8,16 +8,17 @@
 
 import React, { useState } from 'react';
 import Regions from '../assets/Regions';
+import { Link } from 'react-scroll';
 
 // Default values to region 1 (Kanto Region)
 let regionNumberParams = 
 {
     firstPokemon : 1,
     lastPokemon : 151,
-    id : Math.floor(Math.random() * (151 - 1 + 1)) + 1
+    id : Math.floor(Math.random() * 151) + 1
 }
 
-function RegionDropdown({ title, regions=[] }) {
+function RegionDropdown({ title, regions=[], encounterWildPokemon }) {
     const [open, setOpen] = useState(false);
     const [selection, setSelection] = useState([]);
     const toggle = () => setOpen(!open);
@@ -27,17 +28,13 @@ function RegionDropdown({ title, regions=[] }) {
             setSelection([item]);
             regionNumberParams = (Regions.filter((region) => region.id === item.id))[0];
         } else {
-            let selectionAfterRemoval = selection;
-            selectionAfterRemoval = selectionAfterRemoval.filter(current => current.id !== item.id);
+            let selectionAfterRemoval = selection.filter(current => current.id !== item.id);
             setSelection([...selectionAfterRemoval]);
         }
     }
 
     function isItemInSelection(item) {
-        if (selection.find(current => current.id === item.id)) {
-            return true;
-        }
-        return false;
+        return selection.find(current => current.id === item.id) ? true : false;
     }
 
     return (
@@ -57,10 +54,14 @@ function RegionDropdown({ title, regions=[] }) {
                     {
                         regions.map(region => (
                             <li className="dd-list-item" key={region.generationNumber}>
-                                <button type="button" onClick={() => {handleOnClick(region); toggle(!open)}}>
-                                <span>Generation {region.generationNumber}: {region.name}</span>
-                                {isItemInSelection(region) ? <span>&#10003;</span> : ''}
-                                </button>
+                                <Link to="wild-pokemon" spy={true} smooth={true} duration={300} >
+                                    <button type="button" onClick={() => {handleOnClick(region); toggle(!open); encounterWildPokemon()}}>
+                                    <span>
+                                        Generation {region.generationNumber}: {region.name}
+                                        {isItemInSelection(region) ? <span> &#10003; </span> : ''}
+                                    </span>
+                                    </button>
+                                </Link>
                             </li>
                         ))}
                 </ul>

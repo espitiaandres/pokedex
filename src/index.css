@@ -35,6 +35,7 @@ body {
 .collectionHeader {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .app-wrapper {
@@ -170,17 +171,6 @@ header {
 
 .pokedex h2 {
   color: white;
-}
-
-.pokeballSection {
-  padding: 15px;
-  font-size: calc(1px + 2vmin);
-  background-color: firebrick;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20px;
-  justify-content: center;
-  align-items: center;
 }
 
 .pokedex-list {

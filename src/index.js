@@ -18,7 +18,6 @@ import { RegionDropdown, regionNumberParams } from './components/RegionDropdown'
 import regions from './assets/Regions';
 import PokeId from './utils/PokeId';
 
-
 function App() {
     const [pokedex, setPokedex] = useState([])
     const [wildPokemon, setWildPokemon] = useState({})
@@ -29,8 +28,7 @@ function App() {
 
     // Fetches a wild pokemon for the user to catch
     const encounterWildPokemon = () => {
-        axios
-        .get('https://pokeapi.co/api/v2/pokemon/' + PokeId(regionNumberParams.firstPokemon, regionNumberParams.lastPokemon))
+        axios.get('https://pokeapi.co/api/v2/pokemon/' + PokeId(regionNumberParams.firstPokemon, regionNumberParams.lastPokemon))
         .then(response => {
             setWildPokemon(response.data)
         }).catch((e) => {
@@ -77,19 +75,16 @@ function App() {
                         </Link>
                     </button>
                     <button className="catch-btn" >
-                    <Link to="pokedex" spy={true} smooth={true} duration={400}>
-                        See my collection
-                    </Link>
+                        <Link to="pokedex" spy={true} smooth={true} duration={400}>See my collection</Link>
                     </button>
                 </span>
                 <Link to="inlineButtons" spy={true} smooth={true} duration={400} onClick={() => encounterWildPokemon()}>
-                    <RegionDropdown title="Select Region" regions={regions} />
+                    <RegionDropdown title="Select Region" regions={regions} encounterWildPokemon={encounterWildPokemon}/>
                 </Link>
             </div>
 
             <div className="pokedex" id="pokedex">
                 <h2 className="collectionHeader">Your collection so far:</h2>
-                <br/>
                 <div className="pokedex-list">
                     {pokedex.map(pokemon => (
                         <div className="pokemon" key={pokemon.id}>
@@ -101,17 +96,15 @@ function App() {
                             </div>
                             <hr/>
                             <div>
-                                {
-                                    <h5 className="pokemon-stat">
-                                        {pokemon.types.map(p => p.type.name).length > 1 ? 'types:' : 'type:'}
-                                        <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div>&Xi; {poketype}</div>))}</span>
-                                    </h5>
-                                }
+                                {<h5 className="pokemon-stat">
+                                    {pokemon.types.map(p => p.type.name).length > 1 ? 'types:' : 'type:'}
+                                    <span className="pokemon-category">{pokemon.types.map(p => p.type.name).map(poketype => (<div key={poketype}>&Xi; {poketype}</div>))}</span>
+                                </h5>}
                             </div>
                             <hr/>
                             <h5 className="pokemon-stat">
                                 abilities: 
-                                <span className="pokemon-category">{pokemon.abilities.map(p => p.ability.name).map(a => (<div>&Xi; {a}</div>))}</span>
+                                <span className="pokemon-category">{pokemon.abilities.map(p => p.ability.name).map(a => (<div key={a}>&Xi; {a}</div>))}</span>
                             </h5>
                             <hr/>
                             <h5 className="pokemon-stat">
@@ -137,7 +130,7 @@ function App() {
             <div className="footerButtons">
                 <span className="inlineButtons">
                     <button className="catch-btn" >
-                    <Link to="wild-pokemon" spy={true} smooth={true} duration={400}> More pokemon! </Link>
+                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400}> More pokemon! </Link>
                     </button>
                 </span>   
             </div>

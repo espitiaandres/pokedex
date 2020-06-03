@@ -203,7 +203,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding-top: 2px;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
 }
 
 .pokemonImage {
@@ -220,10 +220,6 @@ header {
 .pokedex-list .pokemon .pokemon-name {
   padding-bottom: 10%;
   color: black;
-}
-
-.pokedex-list .pokemon .pokemon-name .pokemon-number{
-  color:firebrick;
 }
 
 .pokedox-list ,.pokemon .remove {
@@ -286,10 +282,6 @@ header {
 
 .underline {
   text-decoration: underline;
-  color: #f3f3f3;
-}
-
-.underline .pokemonApiLink {
   color: #f3f3f3;
 }
 

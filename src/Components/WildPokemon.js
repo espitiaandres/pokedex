@@ -12,9 +12,9 @@ import pokemonCardLayout from '../images/pokemonCardLayout.png';
 function WildPokemon(props) {
     return (
         <div>
-        <h2>
+            <h2>
             A wild <span className="underline">
-                <a className="pokemonApiLink" href={"https://www.pokeapi.co/api/v2/pokemon/" + props.wildPokeid}>
+                <a style={{color: "#f3f3f3"}} href={"https://www.pokeapi.co/api/v2/pokemon/" + props.wildPokeid}>
                     {props.wildPokename}
                 </a>
                 </span> has appeared!

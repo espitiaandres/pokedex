@@ -32,7 +32,7 @@ function App() {
         .then(response => {
             setWildPokemon(response.data)
         }).catch((e) => {
-            console.log('Please try later, something went wrong...', e)
+            console.log('Please try later, something went wrong...', e);
         })
     }
 
@@ -41,10 +41,8 @@ function App() {
         setPokedex(state => {
             const monExists = (state.filter(p => pokemon.id === p.id).length > 0);
             if(!monExists) {
-                state = [...state, pokemon]
-                state.sort(function(a, b){
-                    return a.id - b.id
-                })
+                state = [...state, pokemon];
+                return state.sort((a, b) => (a.id - b.id));
             }
             return state
         })
@@ -53,7 +51,7 @@ function App() {
 
     //Allows user to delete a caught pokemon from their pokedex
     const releasePokemon = (id) => {
-        setPokedex(state => state.filter(p => p.id !== id))
+        setPokedex(state => state.filter(p => p.id !== id));
     }
 
     return(
@@ -62,17 +60,13 @@ function App() {
                 <Header />
             </header>
             <div className="wild-pokemon" id="wild-pokemon">
-                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={!wildPokemon.id ? wildPokemon.id = 1 : wildPokemon.id}/>
+                <WildPokemon wildPokename={wildPokemon.name} wildPokeid={wildPokemon.id}/>
                 <span className="inlineButtons" id="inlineButtons">
                     <button className="catch-btn" onClick={() => {catchPokemon(wildPokemon)}}>
-                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>
-                            Catch!
-                        </Link>
+                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => {catchPokemon(wildPokemon)}}>Catch!</Link>
                     </button>
                     <button className="catch-btn" onClick={() => encounterWildPokemon()}>
-                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => encounterWildPokemon()}>
-                            Pass...
-                        </Link>
+                        <Link to="wild-pokemon" spy={true} smooth={true} duration={400} onClick={() => encounterWildPokemon()}>Pass...</Link>
                     </button>
                     <button className="catch-btn" >
                         <Link to="pokedex" spy={true} smooth={true} duration={400}>See my collection</Link>
@@ -92,7 +86,7 @@ function App() {
                             pokemon.id + ".png"} className="sprite" />
                             <div className="pokemon-name">
                                 <h3>{pokemon.name}</h3>
-                                <h5 className="pokemon-number">pokemon #{pokemon.id}</h5>
+                                <h5 style={{color:"firebrick"}}>pokemon #{pokemon.id}</h5>
                             </div>
                             <hr/>
                             <div>

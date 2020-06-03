@@ -13,9 +13,9 @@ import { Link } from 'react-scroll';
 // Default values to region 1 (Kanto Region)
 let regionNumberParams = 
 {
-    firstPokemon : 1,
-    lastPokemon : 151,
-    id : Math.floor(Math.random() * 151) + 1
+    firstPokemon: 1,
+    lastPokemon: 151,
+    id: Math.floor(Math.random() * 151) + 1
 }
 
 function RegionDropdown({ title, regions=[], encounterWildPokemon }) {

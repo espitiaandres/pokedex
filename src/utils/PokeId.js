@@ -3,7 +3,7 @@
 //  pokedex
 //
 //  Created by Andres Espitia.
-//  Copyright © 2020 Andres Espitia. All rights reserved.
+//  Copyright © 2019-2020 Andres Espitia. All rights reserved.
 //
 
 // Obtains a random pokemon id from the region specified

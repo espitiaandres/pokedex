@@ -17,7 +17,7 @@ function Header() {
             </div>
             <hr />                
             <div>
-                <h3 className="subtitle">Are <span className="underline">YOU</span> ready to catch them all?</h3>
+                <h3 className="subtitle">Are <span className="underline">YOU__</span> ready to catch them all?</h3>
             </div>
             <img src={mainLogo} className="pokemonLogo"/>
             <hr />
